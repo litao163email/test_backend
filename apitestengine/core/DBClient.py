@@ -18,8 +18,13 @@ class DBMysql:
         return self.cur.fetchall()
 
     def __del__(self):
-        self.cur.close()
-        self.con.close()
+        try:
+            if hasattr(self, 'cur') and self.cur:
+                self.cur.close()
+            if hasattr(self, 'con') and self.con:
+                self.con.close()
+        except:
+            pass  # 忽略清理时的错误
 
 
 class DBClient:
