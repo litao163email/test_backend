@@ -1,5 +1,5 @@
 django==3.2.13
-mysqlclient==2.1.1
+# mysqlclient==2.1.1  # 在 macOS 上使用 PyMySQL 替代，避免编译问题
 django-simpleui==2024.3.25
 djangorestframework==3.14.0
 djangorestframework-simplejwt==5.2.2
